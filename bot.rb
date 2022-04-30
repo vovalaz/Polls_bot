@@ -1,8 +1,7 @@
 require 'telegram/bot'
 
 Dir['./modules/*.rb'].sort.each { |file| require file }
-
-require_relative './lib/poll'
+Dir['./lib/*.rb'].sort.each { |file| require file }
 
 class PollBot
   def initialize

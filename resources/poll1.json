@@ -1,0 +1,105 @@
+{
+    "title": "C programming language",
+    "questions": [
+        {
+            "question_text": "Which of the following statements should be used to obtain a remainder after dividing 3.14 by 2.1 ?",
+            "answer": "C",
+            "variants": [
+                "A. rem = 3.14 % 2.1;",
+                "B. rem = modf(3.14, 2.1);",
+                "C. rem = fmod(3.14, 2.1);",
+                "D. Remainder cannot be obtain in floating point division."
+            ]
+        },
+        {
+            "question_text": "What are the types of linkages?",
+            "answer": "B",
+            "variants": [
+                "A. Internal and External",
+                "B. External, Internal and None",
+                "C. External and None",
+                "D. Internal"
+            ]
+        },
+        {
+            "question_text": "Which of the following special symbol allowed in a variable name?",
+            "answer": "D",
+            "variants": [
+                "A. * (asterisk)",
+                "B. | (pipeline)",
+                "C. - (hyphen)",
+                "D. _ (underscore)"
+            ]
+        },
+        {
+            "question_text": "When we mention the prototype of a function?",
+            "answer": "B",
+            "variants": [
+                "A.Defining",
+                "B.Declaring",
+                "C.Prototyping",
+                "D.Calling"
+            ]
+        },
+        {
+            "question_text": "Is there any difference between following declarations?\n1 :extern int fun();\n2 : int fun();",
+            "answer": "B",
+            "variants": [
+                "A. Both are identical",
+                "B. No difference, except extern int fun(); is probably in another file",
+                "C. int fun(); is overrided with extern int fun();",
+                "D. None of these"
+            ]
+        },
+        {
+            "question_text": "How would you round off a value from 1.66 to 2.0?",
+            "answer": "A",
+            "variants": [
+                "A. ceil(1.66)",
+                "B. floor(1.66)",
+                "C. roundup(1.66)",
+                "D. roundto(1.66)"
+            ]
+        },
+        {
+            "question_text": "By default a real number is treated as a",
+            "answer": "B",
+            "variants": [
+                "A. float",
+                "B. double",
+                "C. long double",
+                "D. far double"
+            ]
+        },
+        {
+            "question_text": "Is the following statement a declaration or definition?\nextern int i;",
+            "answer": "A",
+            "variants": [
+                "A. Declaration",
+                "B. Definition",
+                "C. Function",
+                "D. Error"
+            ]
+        },
+        {
+            "question_text": "Identify which of the following are declarations\n1 : extern int x;\n2 : float square ( float x ) { ... }\n3 : double pow(double, double);",
+            "answer": "C",
+            "variants": [
+                "A. 1",
+                "B. 2",
+                "C. 1 and 3",
+                "D. 3"
+            ]
+        },
+        {
+            "question_text": "Which of the following functions can be used to increase the size of dynamically allocated array?",
+            "answer": "A",
+            "variants": [
+                "A. realloc()",
+                "B. calloc()",
+                "C. malloc()",
+                "D. memadjust()"
+            ]
+        }
+    ]
+}

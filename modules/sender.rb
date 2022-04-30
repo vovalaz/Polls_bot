@@ -8,8 +8,9 @@ class PollBot
     end
 
     def send_inline_message(text, keyboard_mrkp)
+      chat = (defined?MessageHandler.message.chat.id) ? MessageHandler.message.chat.id : MessageHandler.message.from.id
       MessageHandler.bot.api.send_message(
-        chat_id: MessageHandler.message.chat.id,
+        chat_id: chat,
         text: text,
         reply_markup: keyboard_mrkp
       )

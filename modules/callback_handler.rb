@@ -12,8 +12,8 @@ class PollBot
         PollHandler.is_polling_active = false
       when 'show_all_polls'
         kb_array = []
-        PollHandler.polls.each do |_poll|
-          kb_array << MarkupButtons.create_inline_button(_poll.title, "poll #{_poll.id}")
+        PollHandler.polls.each do |poll|
+          kb_array << MarkupButtons.create_inline_button(poll.title, "poll #{poll.id}")
         end
         Sender.send_inline_message('Виберіть опитування:', Sender.generate_inline_keyboard(kb_array))
       end

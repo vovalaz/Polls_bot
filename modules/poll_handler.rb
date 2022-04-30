@@ -8,13 +8,12 @@ class PollBot
       self.polls = []
       paths = Dir['./resources/*']
       paths.each do |path|
-        contents = File.open(path).readlines.map(&:chomp)
-        polls.append(Poll.new(contents[0], contents[1..contents.length]))
+        polls.append(Poll.new().init_from_file(path))
       end
     end
 
-    def next_question()
-      Sender.send_inline_message()
+    def next_question
+      Sender.send_inline_message
     end
 
     module_function(
