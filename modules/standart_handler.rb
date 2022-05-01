@@ -13,6 +13,9 @@ class PollBot
           kb_array << MarkupButtons.create_inline_button(_poll.title, "poll #{_poll.id}")
         end
         Sender.send_inline_message('Виберіть опитування:', Sender.generate_inline_keyboard(kb_array))
+      when '/restart'
+        Sender.send_inline_message("Привіт, #{MessageHandler.message.from.first_name}, нікому не кажи але я вболіваю за тебе",
+                                   Sender.generate_inline_keyboard(MarkupButtons::SHOW_ALL_POLLS_INLINE))
       end
     end
     module_function(:handle_standart)

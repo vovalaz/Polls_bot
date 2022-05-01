@@ -2,15 +2,14 @@ require_relative './question'
 require 'json'
 
 class Poll
-  attr_accessor :title, :questions, :len, :id
+  attr_accessor :title, :questions, :id, :recommendations
 
   @@count = 0
   def initialize(title = '', questions = [])
-    @@count += 1
     self.id = @@count
+    @@count += 1
     self.title = title
     self.questions = questions
-    self.len = questions.length
   end
 
   def init_from_file(path)
@@ -20,6 +19,7 @@ class Poll
     data_hash['questions'].each do |question|
       @questions.append(Question.new(question['question_text'], question['answer'], question['variants']))
     end
+    self.recommendations = data_hash['recommendations']
     self
   end
 end

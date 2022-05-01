@@ -1,5 +1,6 @@
 {
     "title": "C programming language",
+    "recommendations": ["https://www.cprogramming.com/", "https://www.learnc.net/", "https://www.geeksforgeeks.org"],
     "questions": [
         {
             "question_text": "Which of the following statements should be used to obtain a remainder after dividing 3.14 by 2.1 ?",
