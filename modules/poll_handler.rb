@@ -1,8 +1,9 @@
 class PollBot
   module PollHandler
-    attr_accessor :polls, :current_points, :question_index, :processed_questions, :picked_poll
+    attr_accessor :polls, :current_points, :question_index, :processed_questions, :picked_poll, :poll_active
 
     def init_polls
+      self.poll_active = false
       self.processed_questions = []
       self.polls = []
       self.current_points = 0
@@ -23,11 +24,12 @@ class PollBot
     end
 
     def next_question
+      self.poll_active = true
       self.question_index += 1
       if question_index < picked_poll.questions.length
         kb = []
         picked_poll.questions[question_index].variants.each do |variant|
-          kb.append(MarkupButtons.create_inline_button(variant, "check_answer #{variant[0]}"))
+          kb.append(MarkupButtons.create_inline_button(variant, "check_answer #{question_index} #{variant[0]}"))
         end
         kb.append(MarkupButtons::END_POLL_INLINE)
         Sender.send_inline_message(picked_poll.questions[question_index].question_text,
@@ -38,6 +40,7 @@ class PollBot
     end
 
     def end_polling
+      poll_active = false
       if current_points < (picked_poll.questions.length * 0.7)
         kb = []
         picked_poll.recommendations.each do |url|
@@ -65,6 +68,8 @@ class PollBot
       :picked_poll=,
       :processed_questions,
       :processed_questions=,
+      :poll_active,
+      :poll_active=,
       :select_poll,
       :next_question,
       :end_polling

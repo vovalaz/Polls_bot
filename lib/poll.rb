@@ -16,8 +16,10 @@ class Poll
     file = File.read(path)
     data_hash = JSON.parse(file)
     self.title = data_hash['title']
+    id = 0
     data_hash['questions'].each do |question|
-      @questions.append(Question.new(question['question_text'], question['answer'], question['variants']))
+      @questions.append(Question.new(question['question_text'], question['answer'], question['variants'], id))
+      id += 1
     end
     self.recommendations = data_hash['recommendations']
     self
